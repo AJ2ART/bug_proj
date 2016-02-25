@@ -1,0 +1,13 @@
+Testing specifications for posts:
+title: string
+description: text
+issue_type: enum - issue or enhancement or feature
+priority: enum - low or medium or high
+status: enum - open or closed or monitor
+- title must be present
+- title must be between 5 and 80 characters
+- description must be present
+- description must be between 20 and 600 characters
+- issue_type must be valid
+- priority must be valid
+- status must be valid
