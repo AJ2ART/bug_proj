@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Blog</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinkstrack' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="<%= controller.controller_name %>">
+    <div id="banner">
+      <%= @page_title || "My Blog!" %>
+    </div>
+    <div id="columns">
+      <div id="side">
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/authors">Authors</a></li>
+        <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div id="main">
+      <%= yield %>
+      </div>
+    </div>
+  </body>
 </html>

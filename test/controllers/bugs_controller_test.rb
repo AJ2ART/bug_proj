@@ -18,7 +18,7 @@ class BugsControllerTest < ActionController::TestCase
 
   test "should create bug" do
     assert_difference('Bug.count') do
-      post :create, bug: { description: @bug.description, issue_type: @bug.issue_type, priority: @bug.priority, status: @bug.status, title: @bug.title }
+      post :create, bug: { description: @bug.description, issue_type: @bug.issue_type, priority: @bug.priority, status: @bug.status, title: @bug.title, author_id: @bug.id }
     end
 
     assert_redirected_to bug_path(assigns(:bug))
