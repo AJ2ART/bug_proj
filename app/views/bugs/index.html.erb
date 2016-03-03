@@ -8,7 +8,7 @@
       <div class="description_info">
         <span class="date"> <%= bug.updated_at.to_formatted_s(:long_ordinal) %>
         </span>
-        <span class="author"> By <%= (bug.author.try(:full_name) || "NA") %>
+        <span class="author"> By <%= (bug.author.try(:lname) || "NA") %>
         </span>
       </div>
       <div class="description_text"> <%= bug.description %> </div>
