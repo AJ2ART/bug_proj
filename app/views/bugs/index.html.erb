@@ -2,23 +2,14 @@
   <p id="notice"><%= notice %></p>
 <% end %>
 <h1>Recent Postings</h1>
-<% @bugs.each do |bug| %>
-  <div class="description">
-    <div class="description_title"> <%= bug.title %> </div>
-      <div class="description_info">
-        <span class="date"> <%= bug.updated_at.to_formatted_s(:long_ordinal) %>
-        </span>
-        <span class="author"> By <%= (bug.author.try(:lname) || "NA") %>
-        </span>
-      </div>
-      <div class="description_text"> <%= bug.description %> </div>
-      <div class="actions">
-        <%= link_to 'Show', bug %>
-        <%= link_to 'Edit', edit_bug_path(bug) %>
-        <%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-  </div>
-<% end %>
+
 <span class="btn">
-  <%= link_to 'New Bug', new_bug_path %>
+  <%= link_to 'New Bug', new_bug_path, remote: true %>
 </span>
+
+<div id="bugs">
+  <%= render @bugs %>
+</div>
+
+<div id="blog-form" style="display:none;"></div>
+
